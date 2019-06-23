@@ -2,12 +2,12 @@
     <div>
         <Form ref="form" :model="formValidate" :rules="ruleValidate">
             <FormItem label="用户名" prop="name">
-                <Input v-model="formValidate.name"></Input>
+                <Input v-model="formValidate.name" />
             </FormItem>
             <FormItem label="邮箱" prop="mail">
-                <Input v-model="formValidate.mail"></Input>
+                <Input v-model="formValidate.mail" />
             </FormItem>
-            </FormItem label="爱好" prop="hobby">
+            <FormItem label="爱好" prop="hobby">
                 <CheckboxGroup v-model="formValidate.hobby">
                   <Checkbox label="eat">吃饭</Checkbox>
                   <Checkbox label="sleep">睡觉</Checkbox>
