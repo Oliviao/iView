@@ -8,6 +8,10 @@ export default new VueRouter({
         {
             path: '/form',
             component: () => import('./views/form.vue')
+        },
+        {
+            path: '/display',
+            component: () => import('./views/display.vue')
         }
     ]
 })
