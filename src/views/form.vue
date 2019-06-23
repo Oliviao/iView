@@ -7,6 +7,14 @@
             <FormItem label="邮箱" prop="mail">
                 <Input v-model="formValidate.mail"></Input>
             </FormItem>
+            </FormItem label="爱好" prop="hobby">
+                <CheckboxGroup v-model="formValidate.hobby">
+                  <Checkbox label="eat">吃饭</Checkbox>
+                  <Checkbox label="sleep">睡觉</Checkbox>
+                  <Checkbox label="run">跑步</Checkbox>
+                  <Checkbox label="movie">看电影</Checkbox>
+                </CheckboxGroup>
+            </FormItem>
         </Form>
         <button @click="handleSubmit">提交</button>
         <button @click="handleReset">重置</button>
@@ -17,14 +25,17 @@
     import Form from '../components/form/form.vue';
     import FormItem from '../components/form/form-item.vue';
     import Input from '../components/input/input.vue';
+    import CheckboxGroup from '../components/checkbox/checkboxgroup.vue';
+    import Checkbox from '../components/checkbox/checkbox.vue';
 
     export default {
-        components: {Form, FormItem, Input}, 
+        components: { Form, FormItem, Input, CheckboxGroup, Checkbox }, 
         data() {
             return {
                 formValidate: {
                     name: '',
-                    mail: ''
+                    mail: '',
+                    hobby: ['eat', 'sleep']
                 },
                 ruleValidate: {
                     name: [
@@ -33,6 +44,10 @@
                     mail: [
                         { required: true, message: '邮箱不能为空', trigger: 'blur' },
                         { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }  
+                    ],
+                    hobby: [
+                        {required: true, type: 'array', min: 1, message: '至少选择1项', trigger: 'change'},
+                        {type: 'array', max: 3, message: '至多选3项', trigger: 'change'}
                     ]
                 }
             }
@@ -51,7 +66,6 @@
               this.$refs.form.resetFields();
             },
             test () {
-                console.log('----test---')
             }
         }
     }

@@ -30,18 +30,15 @@
           }
         },
         mounted() {
-            console.log('--mounted----')
         },
         methods: {
             handleInput(event) {
-              console.log('--input--')
                 const value = event.target.value
                 this.currentValue = value
                 this.$emit('input', value)
                 this.dispatch('FormItem', 'on-form-change', value)
             },
             handleBlur() {
-                console.log('--blur--')
                 this.dispatch('FormItem', 'on-form-blur', this.currentValue)
             }
         }
