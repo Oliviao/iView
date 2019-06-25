@@ -12,6 +12,10 @@ export default new VueRouter({
         {
             path: '/display',
             component: () => import('./views/display.vue')
+        },
+        {
+            path: '/alert',
+            component: () => import('./views/alert.vue')
         }
     ]
 })

@@ -59,28 +59,28 @@ export default {
     watch: {
       value (val) {
         if (val === this.trueValue || val === this.falseValue) {
-          this.updateModel();
+          this.updateModel()
         } else {
-          throw 'Value should be trueValue or falseValue.';
+          throw 'Value should be trueValue or falseValue.'
         }
       }
     },
     mounted() {
-      this.parent = findComponentUpward(this, 'CheckboxGroup');
+      this.parent = findComponentUpward(this, 'CheckboxGroup')
 
       if (this.parent) {
-        this.group = true;
+        this.group = true
       }
 
       if (this.group) {
-        this.$parent.updateModel(true);
+        this.$parent.updateModel(true)
       } else {
-        this.updateModel();
+        this.updateModel()
       }
     },
     methods: {
       updateModel () {
-        this.currentValue = this.value === this.trueValue;
+        this.currentValue = this.value === this.trueValue
       },
       change(event) {
           if(this.disabled) {
