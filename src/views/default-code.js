@@ -1,8 +1,8 @@
 const code = 
 `<template>
-    <div>
+    <div class="message-test">
         <input v-model="message">
-        {{ message }}
+        {{ messageTest }}
     </div>
 </template>
 <script>
@@ -11,8 +11,19 @@ const code =
             return {
                 message: 'hello lily'
             }
+        },
+        computed: {
+            messageTest(newVal) {
+                return this.message + '增加测试'
+            }
         }
     }
-</script>`
+</script>
+<style>
+.message-test {
+    color: blue;
+}
+</style>
+`
 
 export default code

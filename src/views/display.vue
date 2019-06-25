@@ -5,8 +5,8 @@
   </div>
 </template>
 <script>
-  import Display from '../components/display/display.vue';
-  import defaultCode from './default-code.js';
+  import Display from '../components/display/display.vue'
+  import defaultCode from './default-code.js'
 
   export default {
     components: { Display },
