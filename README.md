@@ -1,4 +1,4 @@
-## 一、具有数据校验功能的表单组建
+## 一、Form 具有数据校验功能的表单组建
 > 用到的组件间通信方式
 
 provide / inject : 把 form 实例分发给 FormItem，常用于获取父组件的状态
@@ -17,7 +17,7 @@ ref = "form"
 
 缓存组件实例
 
-## 二、动态渲染组件
+## 二、Display 动态渲染组件
 > 用途
 
 只需要修改某个 .vue 文件就可以实现更新，不需要重新打包、编译、上传等操作
@@ -31,3 +31,10 @@ ref = "form"
 1、使用 return 包裹 export default 里面的内容
 
 2、使用 new Function(this.js)() 执行语句，生成 Vue.extend() 需要的参数内容
+
+## 三、Alert 全局提示组件
+
+> 核心实现办法
+
+- Vue.prototype.$Vue 全局挂载
+- newInstance方法的实现
