@@ -1,15 +1,19 @@
 import Alert from './alert.vue'
 import Vue from 'vue'
 
+// console.log('---这是导入的 alert.vue 文件结果：', Alert)
+
 // vue-loader 将Alert转化成为一个对象，所以能够动态添加属性
 Alert.newInstance = () => {
 
   const Instance = new Vue({
     data: {},
     render (h) {
+      console.log('===', h(Alert))
       return h(Alert)
     }
   })
+  console.log('---', Instance)
 
   const component = Instance.$mount()
   document.body.appendChild(component.$el)

@@ -9,7 +9,10 @@
                     <router-link to="/display">Display: 动态渲染 .vue 组件</router-link>
                 </li>
                 <li>
-                    <router-link to="/alert">Alert</router-link>
+                    <router-link to="/alert">Alert: 全局提示组件</router-link>
+                </li>
+                <li>
+                    <router-link to="/tree">Tree: 树形控件</router-link>
                 </li>
             </ul>
         </div>

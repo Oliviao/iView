@@ -16,6 +16,10 @@ export default new VueRouter({
         {
             path: '/alert',
             component: () => import('./views/alert.vue')
+        },
+        {
+            path: '/tree',
+            component: () => import('./views/tree.vue')
         }
     ]
 })
