@@ -13,6 +13,7 @@ import { deepCopy } from '../../utils/assist';
 
 export default {
     components: { TreeNode },
+    name: 'Tree',
     props: [ 'data' ],
     created() {
         this.buildData()
@@ -28,7 +29,10 @@ export default {
     methods: {
         buildData() {
             this.cloneData = deepCopy(this.data)
-        }
+        },
+        emitEvent (eventName, data) {
+          this.$emit(eventName, data, this.cloneData);
+        }    
     }
 }
 </script>

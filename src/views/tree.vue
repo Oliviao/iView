@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>大家好，这里是🌲树tree的展示</h3>
-        <Tree :data="data"></Tree>
+        <Tree @on-toggle-expand="toggle" :data="data"></Tree>
     </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
                 {
                     title: 'parent 1',
                     // 是否是展开的
-                    expand: false,
+                    expand: true,
                     children: [
                         {
                             title: 'parent 1-1',
@@ -31,7 +31,7 @@ export default {
                         },
                         {
                             title: 'parent 1-2',
-                            expand: true,
+                            expand: false,
                             children: [
                                 {
                                     title: 'leaf 1-2-1'
@@ -53,6 +53,11 @@ export default {
                     ]
                 }
             ]
+        }
+    },
+    methods: {
+        toggle() {
+            console.log('暴露出一个方法，供用户调用')
         }
     }
 }

@@ -8,22 +8,26 @@
             </span>
             <span class="hover">{{ data.title }}</span>
         </div>
-        <TreeNode
-            v-if="data.expand"
-            v-for="(item, index) in data.children"
-            :key="index"
-            :data="item"
-        ></TreeNode>
+        <div v-show="showChildren">
+            <TreeNode
+                v-for="(item, index) in data.children"
+                :key="index"
+                :data="item"
+            ></TreeNode>
+        </div>
     </div>
 </template>
 
 <script>
+import { findComponentUpward } from '../../utils/assist.js'
+
 export default {
     name: 'TreeNode',
     props: [ 'data' ],
     data() {
         return {
-            showChildren: false
+            tree: findComponentUpward(this, 'Tree'),
+            showChildren: this.data.expand
         }
     },
     mounted() {
@@ -33,8 +37,11 @@ export default {
     methods: {
         toggle() {
             this.$set(this.data, 'expand', !this.data.expand)
-            console.log(this.data.expand)
-            console.log(this.data)
+            this.showChildren = this.data.expand
+
+            if(this.tree) {
+                this.tree.emitEvent('on-toggle-expand', this.data)
+            }
         }
     }
 }
