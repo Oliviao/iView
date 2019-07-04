@@ -51,7 +51,7 @@ ref = "form"
 
 使用 vm.$set 增加响应式数据
 
-使用 findComponentUpward 找到根节点 Tree，然后使用 $emit 触发用户自定义的事件。所以该功能是为用户提供接口 @on-toggle-expand ，用户点击的时候可以调用
+使用 findComponentUpward 找到根节点 Tree，然后使用 $emit 触发用户自定义的事件。所以该功能是为用户提供接口 @on-toggle-expand ，用户点击的时候可以调用。也可以使用 vue 自带的 provide/inject 实现依赖注入，将 tree 实例注入到 node 中，在 node 中则可以调用该实例中的方法。
 
 ## 五、总结
 

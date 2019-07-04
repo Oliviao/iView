@@ -14,6 +14,11 @@ import { deepCopy } from '../../utils/assist';
 export default {
     components: { TreeNode },
     name: 'Tree',
+    provide() {
+        return {
+            tree: this
+        }
+    },
     props: [ 'data' ],
     created() {
         this.buildData()

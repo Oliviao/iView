@@ -19,14 +19,15 @@
 </template>
 
 <script>
-import { findComponentUpward } from '../../utils/assist.js'
+// import { findComponentUpward } from '../../utils/assist.js'
 
 export default {
     name: 'TreeNode',
     props: [ 'data' ],
+    inject: ['tree'],
     data() {
         return {
-            tree: findComponentUpward(this, 'Tree'),
+            // tree: findComponentUpward(this, 'Tree'),
             showChildren: this.data.expand
         }
     },
@@ -39,6 +40,7 @@ export default {
             this.$set(this.data, 'expand', !this.data.expand)
             this.showChildren = this.data.expand
 
+            // console.log('---', this.tree)
             if(this.tree) {
                 this.tree.emitEvent('on-toggle-expand', this.data)
             }
