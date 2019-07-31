@@ -1,4 +1,4 @@
-视频展示：<video src="images/iview.mov" controls></video>
+视频展示：<a href="./index.html"></a>
 
 
 ## 一、Form 具有数据校验功能的表单组建
