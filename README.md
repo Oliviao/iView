@@ -1,4 +1,5 @@
-视频展示：<a href="./index.html"></a>
+视频展示：
+<https://htmlpreview.github.io/?https://github.com/Oliviao/iView/blob/master/index.html>
 
 
 ## 一、Form 具有数据校验功能的表单组建
