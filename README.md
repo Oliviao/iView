@@ -1,3 +1,6 @@
+视频展示：<video src="images/iview.mov" controls></video>
+
+
 ## 一、Form 具有数据校验功能的表单组建
 > 用到的组件间通信方式
 
